@@ -40,9 +40,7 @@ jobs:
         run: pip install pytest requests
 
       - name: Run tests
-        run: |
-          pytest -v
-          exit 1
+        run: pytest -v
 
       - name: Clean up container
         if: always()
