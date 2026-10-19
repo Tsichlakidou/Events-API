@@ -78,7 +78,10 @@ def create_app():
     # Health check endpoint
     @app.route('/api/health', methods=['GET'])
     def health():
-        return jsonify({'status': 'healthy'}), 200
+        return jsonify({
+            'status': 'healthy',
+            'version': '1.1.0'
+        }), 200
     
     return app
 
