@@ -4,7 +4,10 @@ BASE_URL = "http://localhost:5000"
 def test_health_endpoint_returns_healthy():
     response = requests.get(BASE_URL + '/api/health')
     assert response.status_code == 200
-    assert response.json() == {'status': 'healthy'}
+    assert response.json() == {
+        'status': 'healthy',
+        'version': '1.1.0'
+    }
 
 def test_register_user_creates_new_user():
     username = f"testuser_{int(time.time())}"
